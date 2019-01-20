@@ -1,4 +1,5 @@
 from itertools import cycle
+import math
 import os
 import random
 import socket
@@ -46,6 +47,8 @@ IMAGES['background'] = pygame.image.load('assets/sprites/background.png').conver
 IMAGES['title'] = pygame.image.load('assets/sprites/title.png').convert_alpha()
 IMAGES['birdbox'] = pygame.image.load('assets/sprites/birdbox.png').convert_alpha()
 IMAGES['birdbox_small'] = pygame.image.load('assets/sprites/birdbox_small.png').convert_alpha()
+IMAGES['birdbox_blinded'] = pygame.image.load('assets/sprites/birdbox_blinded.png').convert_alpha()
+IMAGES['birdbox_blinded_medium'] = pygame.image.load('assets/sprites/birdbox_blinded_medium.png').convert_alpha()
 IMAGES['team_name'] = pygame.image.load('assets/sprites/team_name.png').convert_alpha()
 IMAGES['score'] = pygame.image.load('assets/sprites/score.png').convert_alpha()
 IMAGES['numbers'] = (
@@ -187,6 +190,9 @@ score = 0
 # Store base azimuth
 base_azimuth = 400
 
+# Store counter for birdbox surprise
+birdbox_surprise = 0
+
 # Load the fonts
 font_40 = pygame.font.SysFont("Bold", 40, True, False)
 
@@ -224,6 +230,7 @@ for i in range(stripe_count):
 
 # -------- Main Program Loop -----------
 while not done:
+    birdbox_surprise = (birdbox_surprise + 0.1) % 50
     # --- Main event loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -240,6 +247,7 @@ while not done:
             player.x = 445
             player.dx = 0
             score = 0
+            birdbox_surprise = 0
             pygame.mouse.set_visible(False)
 
         if not collision:
@@ -297,6 +305,15 @@ while not done:
                 cars[i].y = random.randrange(-150, -50)
                 cars[i].x = random.randrange(290, 600)
                 cars[i].dy = random.randint(4, 9)
+
+        if birdbox_surprise < 20:		
+            screen.blit(pygame.transform.flip(IMAGES['birdbox_blinded'], True, False), (40 * birdbox_surprise, 200 - 200 * math.fabs(math.cos(birdbox_surprise))))
+        elif birdbox_surprise > 28 and birdbox_surprise < 33:
+            if math.floor(birdbox_surprise) % 2 == 1:
+                screen.blit(pygame.transform.flip(IMAGES['birdbox_blinded_medium'], True, False), (320, 80))
+            else:
+                screen.blit(IMAGES['birdbox_blinded_medium'], (320, 80))
+
         pygame.display.update()
 		
         # Check the collision of the player with the car
