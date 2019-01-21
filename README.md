@@ -1,5 +1,6 @@
 # Bird Box Challenge  
 
+![Workshop Prototype](docs/images/home.png)  
 Help Truck-kun avoid Bird Boxes on the road!  
 And just like in the movie Bird Box, sometimes you can't see them coming... literally!  
 
@@ -67,7 +68,7 @@ No public contributions expected as of now.
 ## Authors
 
 * **Tan Yong He** - [tanyonghe](https://github.com/tanyonghe)
-* **Lou Shaw Yeong** - [xiaoyeong] (https://github.com/xiaoyeong)
+* **Lou Shaw Yeong** - [xiaoyeong](https://github.com/xiaoyeong)
 
 ## License
 
