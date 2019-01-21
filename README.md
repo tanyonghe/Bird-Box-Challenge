@@ -64,22 +64,15 @@ python3 main.py
 
 No public contributions expected as of now.
 
-## Versioning
-
-For the versions available, see the [tags on this repository](https://github.com/tanyonghe/Bird-Box-Challenge/tags). 
-
 ## Authors
 
 * **Tan Yong He** - [tanyonghe](https://github.com/tanyonghe)
-
-See also the list of [contributors](https://github.com/tanyonghe/Bird-Box-Challenge/contributors) who participated in this project.
+* **Lou Shaw Yeong** - [xiaoyeong] (https://github.com/xiaoyeong)
 
 ## License
 
-his project is licensed under the GNU GPL v3 - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the GNU GPL v3 - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* [Ride-the-Road](https://github.com/SundeepChand/Ride-the-Road)
+* [Ride-the-Road](https://github.com/SundeepChand/Ride-the-Road) for the basic game idea.
